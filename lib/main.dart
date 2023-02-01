@@ -7,7 +7,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   String firstText = "Ogrenci Takip Sistemi";
-  List<Student> students = [Student("Tugce", "VATANSEVER GUNDUZ", 15,""),Student("Tugba", "VATANSEVER", 45,""),Student("Kubra", "VATANSEVER", 60,"")];
+  List<Student> students = [Student("Tugce", "VATANSEVER GUNDUZ", 15),Student("Tugba", "VATANSEVER", 45),Student("Kubra", "VATANSEVER", 60)];
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
                       backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2023/01/25/12/33/snowy-owl-7743488_960_720.jpg"),
                     ),
                     title: Text(students[index].firstName+" "+students[index].lastName),
-                    subtitle: Text("Sinavdan aldigi not : "+students[index].grade.toString()),
+                    subtitle: Text("Sinavdan aldigi not:"+students[index].grade.toString()+"["+students[index].getStatus+"]"),
                     trailing: builtStatusIcon(students[index].grade),
                     onTap: (){
                       print(students[index].firstName+" "+students[index].lastName);
